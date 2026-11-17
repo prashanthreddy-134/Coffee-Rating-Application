@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17120f">
+  <title>BeanVote — Coffee Rating</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="shell">
+    <nav class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">B</span> beanvote<span class="brand-dot">.</span></a>
+      <span class="live"><i></i> COMMUNITY PICKS</span>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow"><span></span> THE PEOPLE'S COFFEE GUIDE</div>
+      <h1>Every cup has<br><em>a story.</em></h1>
+      <p class="hero-copy">Vote for the coffee you love. Every click counts, and the community decides what deserves the crown.</p>
+      <div class="hero-stats">
+        <div><strong id="totalVotes">0</strong><span>COMMUNITY VOTES</span></div>
+        <div class="stat-divider"></div>
+        <div><strong id="coffeeCount">6</strong><span>COFFEES TO RATE</span></div>
+      </div>
+    </section>
+
+    <section class="section-heading">
+      <div><span class="section-kicker">THE LINEUP</span><h2>Choose your favourite</h2></div>
+      <span class="sort-label"><span class="sort-dot"></span> Ranked by votes</span>
+    </section>
+
+    <section id="coffeeGrid" class="coffee-grid" aria-live="polite">
+      <div class="loading">Brewing the lineup...</div>
+    </section>
+    <footer><span>BEANVOTE © 2026</span><span>Made for coffee people <b>♥</b></span></footer>
+  </main>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
